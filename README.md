@@ -6,6 +6,7 @@ A single-page, static academic homepage built for GitHub Pages. It uses no frame
 index.html                  all content and CSS (one file)
 .nojekyll                   serve files as-is (no Jekyll processing)
 README.md                   this file
+robots.txt, sitemap.xml     search-engine crawling hints
 assets/
   img/Akib_Headshot.jpg     headshot (circular "SA" initials show if it fails to load)
   pdf/
@@ -104,6 +105,29 @@ The preferred address is **https://stark-akib.github.io/**. It works only if the
 ### Canonical URL and social metadata
 
 The site is live at https://stark-akib.github.io/. `index.html` already contains the canonical link, `og:url`, `og:image`, and the JSON-LD `url`/`image` for that address. If the site ever moves (for example, to a custom domain), update those four places.
+
+## Search visibility (Google)
+
+Already in place: a descriptive `<title>` and meta description with the full name, a single `<h1>` with the name, `Person` structured data (JSON-LD with `sameAs` links to Scholar, LinkedIn, and GitHub), a canonical URL, Open Graph tags, `robots.txt`, and `sitemap.xml`.
+
+These steps need your Google account, so only you can do them:
+
+1. Open [Google Search Console](https://search.google.com/search-console) and add a **URL-prefix** property for `https://stark-akib.github.io/`.
+2. Choose the **HTML file** verification method. Download the `googleXXXX.html` file, put it in the root of this repository, and push. Then click **Verify** (keep the file in the repository afterward).
+3. Under **Sitemaps**, submit `sitemap.xml`.
+4. Under **URL Inspection**, enter `https://stark-akib.github.io/` and click **Request indexing**.
+
+Links from profiles Google already trusts help the site rank for your name:
+
+- Google Scholar → Edit profile → **Homepage**: `https://stark-akib.github.io/`
+- LinkedIn → Contact info → **Website** (type: Personal)
+- GitHub profile → **Website** field (it currently points to LinkedIn)
+- Any RIT, ESL Global Cybersecurity Institute, or lab page that lists you
+- Your email signature
+
+Indexing usually takes a few days to a few weeks. Bing (which also powers DuckDuckGo and Yahoo) has a similar tool, [Bing Webmaster Tools](https://www.bing.com/webmasters), which can import a verified Search Console property.
+
+When you change content, update `<lastmod>` in `sitemap.xml` as well as the footer date.
 
 ## Launch checklist
 

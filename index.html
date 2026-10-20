@@ -12,6 +12,7 @@
 <meta property="og:image" content="https://stark-akib.github.io/assets/img/Akib_Headshot.jpg">
 <meta property="og:image:alt" content="Portrait of Shaikh Akib Shahriyar">
 <meta property="og:type" content="profile">
+<meta property="og:site_name" content="Shaikh Akib Shahriyar">
 <meta property="og:title" content="Shaikh Akib Shahriyar | AI Security Researcher">
 <meta property="og:description" content="Ph.D. candidate at RIT studying adversarial machine learning, synthetic-media forensics, and the security of tool-using AI agents.">
 <meta property="profile:first_name" content="Shaikh Akib">
@@ -23,7 +24,9 @@
   "@context": "https://schema.org",
   "@type": "Person",
   "name": "Shaikh Akib Shahriyar",
+  "alternateName": "Akib Shahriyar",
   "url": "https://stark-akib.github.io/",
+  "description": "Ph.D. candidate at Rochester Institute of Technology studying adversarial machine learning, synthetic-media forensics, and the security of tool-using AI agents.",
   "image": "https://stark-akib.github.io/assets/img/Akib_Headshot.jpg",
   "jobTitle": "Ph.D. Candidate in Computing and Information Sciences",
   "email": "mailto:as8751@rit.edu",
@@ -188,12 +191,33 @@ h1 { font-size: clamp(2rem, 1.4rem + 2.2vw, 2.75rem); margin: 0 0 .5rem; letter-
 .button:hover { background: var(--accent-hover); border-color: var(--accent-hover); color: #fff; text-decoration: none; }
 
 /* About details */
-.facts { display: grid; grid-template-columns: 1fr; gap: 0 2.5rem; margin-top: 1.75rem; }
-@media (min-width: 700px) { .facts { grid-template-columns: 1fr 1fr; } }
+.facts { margin-top: 1.75rem; }
 .facts h3 { margin-top: 0; font-size: 1.0625rem; }
-.facts ul { list-style: none; padding: 0; font-size: .9688rem; line-height: 1.5; }
+.facts ul { list-style: none; padding: 0; margin: 0; font-size: .9688rem; line-height: 1.5; }
 .facts li { margin-bottom: .6rem; }
+.facts li:last-child { margin-bottom: 0; }
 .when { color: var(--muted); white-space: nowrap; }
+
+/* Academic appointments: role + institution left, dates right */
+.appointments { margin-top: 1.875rem; } /* ~30px below Education */
+.appointments h3 { margin-bottom: .25rem; }
+.facts .appt {
+  display: grid; grid-template-columns: minmax(0, 1fr) max-content;
+  gap: .15rem 1.5rem; align-items: baseline;
+  margin: 0; padding: .875rem 0; /* ~14px */
+}
+.facts .appt + .appt { border-top: 1px solid var(--border); }
+.appt p { margin: 0; }
+.appt-role { font-weight: 700; color: var(--text); font-size: 1rem; }
+.appt-org { color: var(--muted); overflow-wrap: break-word; }
+.appt-dates {
+  color: var(--accent); font-weight: 600; text-align: right; white-space: nowrap;
+  font-variant-numeric: tabular-nums lining-nums;
+}
+@media (max-width: 559px) {
+  .facts .appt { grid-template-columns: minmax(0, 1fr); }
+  .appt-dates { text-align: left; margin-top: .2rem !important; }
+}
 
 /* Research */
 .lead-in { font-weight: 600; }
@@ -342,24 +366,55 @@ details[open] summary { margin-bottom: .9rem; }
         <p>I am a Ph.D. candidate in Computing and Information Sciences at Rochester Institute of Technology, advised by Dr. Matthew Wright, and a graduate research assistant in RIT’s ESL Global Cybersecurity Institute. My research connects adversarial machine learning and synthetic-media forensics with the security of tool-using and multi-agent AI systems. Before RIT, I taught at North Western University and KUET, where I became an Assistant Professor in 2021. I earned my B.Sc. and M.Sc. in Computer Science and Engineering from KUET.</p>
 
         <div class="facts">
-          <div>
-            <h3>Education</h3>
+          <section aria-labelledby="education-h">
+            <h3 id="education-h">Education</h3>
             <ul>
               <li>Ph.D., Computing and Information Sciences, RIT <span class="when">— in progress</span><br>Advisor: <a href="https://sites.google.com/site/matthewkwright/">Dr. Matthew Wright</a></li>
               <li>M.Sc. Eng., Computer Science and Engineering, KUET <span class="when">— 2019</span></li>
               <li>B.Sc. Eng., Computer Science and Engineering, KUET <span class="when">— 2017</span></li>
             </ul>
-          </div>
-          <div>
-            <h3>Appointments</h3>
-            <ul>
-              <li>Graduate Research Assistant, ESL Global Cybersecurity Institute, RIT <span class="when">— Aug. 2020–present</span></li>
-              <li>Adjunct Faculty, RIT <span class="when">— Dec. 2024–May 2025</span></li>
-              <li>Assistant Professor (former), Dept. of Computer Science and Engineering, KUET <span class="when">— Jan. 2021–Sep. 2023</span></li>
-              <li>Lecturer, KUET <span class="when">— Jan. 2018–Dec. 2020</span></li>
-              <li>Lecturer, North Western University, Khulna <span class="when">— May–Dec. 2017</span></li>
+          </section>
+
+          <section class="appointments" aria-labelledby="appointments-h">
+            <h3 id="appointments-h">Academic Appointments</h3>
+            <ul class="appt-list">
+              <li class="appt">
+                <div>
+                  <p class="appt-role">Graduate Research Assistant</p>
+                  <p class="appt-org">ESL Global Cybersecurity Institute, Rochester Institute of Technology</p>
+                </div>
+                <p class="appt-dates"><time datetime="2020-08">Aug. 2020</time>–Present</p>
+              </li>
+              <li class="appt">
+                <div>
+                  <p class="appt-role">Adjunct Faculty</p>
+                  <p class="appt-org">Rochester Institute of Technology</p>
+                </div>
+                <p class="appt-dates"><time datetime="2024-12">Dec. 2024</time>–<time datetime="2025-05">May 2025</time></p>
+              </li>
+              <li class="appt">
+                <div>
+                  <p class="appt-role">Assistant Professor</p>
+                  <p class="appt-org">Department of Computer Science and Engineering, Khulna University of Engineering &amp; Technology (KUET)</p>
+                </div>
+                <p class="appt-dates"><time datetime="2021-01">Jan. 2021</time>–<time datetime="2023-09">Sep. 2023</time></p>
+              </li>
+              <li class="appt">
+                <div>
+                  <p class="appt-role">Lecturer</p>
+                  <p class="appt-org">Department of Computer Science and Engineering, Khulna University of Engineering &amp; Technology (KUET)</p>
+                </div>
+                <p class="appt-dates"><time datetime="2018-01">Jan. 2018</time>–<time datetime="2020-12">Dec. 2020</time></p>
+              </li>
+              <li class="appt">
+                <div>
+                  <p class="appt-role">Lecturer</p>
+                  <p class="appt-org">North Western University, Khulna</p>
+                </div>
+                <p class="appt-dates"><time datetime="2017-05">May</time>–<time datetime="2017-12">Dec. 2017</time></p>
+              </li>
             </ul>
-          </div>
+          </section>
         </div>
       </div>
     </div>
