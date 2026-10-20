@@ -97,29 +97,23 @@ The preferred address is **https://stark-akib.github.io/**. It works only if the
 3. In the repository, go to **Settings → Pages**. Set **Source** to *Deploy from a branch*, then choose `main` and `/ (root)`.
 4. Wait for the Pages build to finish. Then open the URL and confirm that the page, headshot, and every PDF load.
 
+**Updating the live site:** edit files, then `git add -A`, `git commit -m "..."`, and `git push`. Pages rebuilds in about a minute.
+
 **If you use a different account,** the address becomes `https://<that-username>.github.io/`. The repository must then be named `<that-username>.github.io`. Your displayed name on the page does not change. Alternatively, publish this as a project repository (`https://<username>.github.io/<repo>/`; the relative paths already support this) or attach a custom domain under **Settings → Pages → Custom domain**.
 
-### After the public URL is confirmed
+### Canonical URL and social metadata
 
-Add these lines inside `<head>`, replacing the URL with the real one:
-
-```html
-<link rel="canonical" href="https://stark-akib.github.io/">
-<meta property="og:url" content="https://stark-akib.github.io/">
-<meta property="og:image" content="https://stark-akib.github.io/assets/img/Akib_Headshot.jpg">
-```
-
-Optionally add `"url"` and `"image"` with the same absolute URLs to the JSON-LD `Person` block.
+The site is live at https://stark-akib.github.io/. `index.html` already contains the canonical link, `og:url`, `og:image`, and the JSON-LD `url`/`image` for that address. If the site ever moves (for example, to a custom domain), update those four places.
 
 ## Launch checklist
 
-- [ ] GitHub account and repository name confirmed.
+- [x] GitHub account and repository name confirmed.
 - [ ] CV in `assets/pdf/` is the approved public copy, with no phone number or home address.
 - [ ] Research and teaching statement PDFs are the approved public versions.
 - [ ] Every linked paper PDF is a version you may post.
 - [ ] Faculty-search line and footer date are current.
 - [ ] Publication statuses are current; preprints are not labeled as accepted.
-- [ ] After deployment: canonical/OG lines added and live links rechecked.
+- [x] After deployment: canonical/OG lines added and live links rechecked.
 - [ ] No private material is in the repository (source application files, evaluations, review notes, drafting briefs).
 
 ## Design notes
